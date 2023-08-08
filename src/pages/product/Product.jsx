@@ -1,10 +1,39 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { FetchedDataContext } from "../../App";
 
 const Product = () => {
-  const { name } = useParams();
+  const { id } = useParams();
+  const AllproductsData = useContext(FetchedDataContext);
 
-  return <div>Product</div>;
+  const [currentProductData, setCurrentProductData] = useState(null);
+
+  useEffect(() => {
+    const filteredProduct = AllproductsData.find((product) => product.id == id);
+    setCurrentProductData(filteredProduct);
+  }, [AllproductsData, id]);
+
+  if (!currentProductData) {
+    return <div className="mt-20">Loading...</div>;
+  }
+
+  return (
+    <div className="mt-20 w-11/12 sm:w-3/5 mx-auto bg-gray-200 shadow-lg p-4 flex flex-col sm:flex-row justify-between items-center gap-4 rounded">
+      <>
+        <img
+          src={currentProductData.imgSrc}
+          className=" w-80"
+          alt={currentProductData.name}
+        />
+      </>
+
+      <ul className="md:text-xl font-medium">
+        <li className="mb-3">Name: {currentProductData.name}</li>
+        <li className="mb-3">Price: {currentProductData.price} $</li>
+        <li className="mb-3">About: {currentProductData.about}</li>
+      </ul>
+    </div>
+  );
 };
 
 export default Product;
