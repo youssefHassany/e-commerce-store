@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.controlled {
+  display: none;
+}
+.controller:focus .controlled {
+  display: block;
+}

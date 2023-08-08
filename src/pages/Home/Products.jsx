@@ -9,11 +9,10 @@ const Products = () => {
     <div className="w-4/5 sm:w-11/12 mt-10 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
       {productsData.map((item, index) => (
         <Link
-          to={`/${item.id}`}
+          to={`/product/${item.id}`}
           key={index}
           className="bg-gray-100 shadow-lg flex flex-col items-center rounded p-2"
         >
-          {console.log(item.imgSrc)}
           <img src={item.imgSrc} className="w-44 mb-2" />
           <p className="text-2xl mb-2">{item.name}</p>
           <h2 className="font-bold mb-2">{item.price} $</h2>

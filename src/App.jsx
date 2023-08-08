@@ -34,7 +34,7 @@ function App() {
       <FetchedDataContext.Provider value={productsData}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/:id" element={<Product />} />
+          <Route path="/product/:id" element={<Product />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </FetchedDataContext.Provider>
