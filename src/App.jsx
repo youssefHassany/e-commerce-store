@@ -3,6 +3,7 @@ import Home from "./pages/Home/Home";
 import Product from "./pages/product/Product";
 import NotFound from "./pages/not found/NotFound";
 import SearchResults from "./pages/search results/SearchResults";
+import Footer from "./pages/footer/Footer";
 
 import { Route, Routes } from "react-router-dom";
 import { useState, useEffect, createContext } from "react";
@@ -62,6 +63,8 @@ function App() {
       ) : (
         <p className="text-3xl text-center mt-28">Loading...</p>
       )}
+
+      <Footer />
     </main>
   );
 }

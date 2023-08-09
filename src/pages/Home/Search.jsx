@@ -17,9 +17,12 @@ const Search = () => {
   };
 
   return (
-    <>
+    <div
+      className={`w-full h-[90vh] flex flex-col justify-center items-center hero relative`}
+    >
+      <div className="absolute w-full h-full bg-black opacity-80 top-0 left-0 z-0"></div>
       <form
-        className={`mt-20 mx-auto shadow-lg w-9/12 p-5`}
+        className={`bg-white shadow-xl w-9/12 p-5 relative z-10 rounded`}
         onSubmit={(e) => handleSearchSubmit(e)}
       >
         <input
@@ -42,7 +45,7 @@ const Search = () => {
       </form>
 
       <div
-        className={`w-9/12 bg-white p-3 shadow-xl mx-auto my-2 rounded h-fit max-h-40 overflow-y-scroll ${
+        className={`w-9/12 bg-white p-3 shadow-xl mx-auto my-2 rounded h-fit max-h-40 overflow-y-scroll relative z-10 ${
           isListShown ? "" : "hidden"
         }`}
       >
@@ -59,7 +62,7 @@ const Search = () => {
           ))}
         </ul>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -18,7 +18,7 @@ const Product = () => {
   }
 
   return (
-    <div className="mt-20 w-11/12 sm:w-3/5 mx-auto bg-gray-200 shadow-lg p-4 flex flex-col lg:flex-row justify-between items-center gap-4 rounded">
+    <div className="mt-14 w-11/12 sm:w-3/5 mx-auto bg-gray-200 shadow-lg p-4 flex flex-col lg:flex-row justify-between items-center gap-4 rounded min-h-screen">
       <>
         <img
           src={currentProductData.imgSrc}

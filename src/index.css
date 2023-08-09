@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.controlled {
-  display: none;
-}
-.controller:focus .controlled {
-  display: block;
+.hero {
+  background: url("./assets/cart.webp");
+  background-size: cover;
+  background-position: center center;
 }
