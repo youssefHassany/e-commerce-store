@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FetchedDataContext } from "../../App";
 
 const Products = () => {
-  const productsData = useContext(FetchedDataContext);
+  const { productsData } = useContext(FetchedDataContext);
 
   return (
     <div className="w-4/5 sm:w-11/12 mt-10 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">

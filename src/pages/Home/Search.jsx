@@ -4,27 +4,24 @@ import { FetchedDataContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 
 const Search = () => {
-  const [search, setSearch] = useState("");
-  const [searchList, setSearchList] = useState([]);
   const [isListShown, setIsListShown] = useState(false);
 
-  const dataList = useContext(FetchedDataContext);
+  const { search, setSearch, searchList, handleSearch } =
+    useContext(FetchedDataContext);
 
   const navigate = useNavigate();
 
-  const handleSearch = (e) => {
-    const searchVal = e.target.value;
-    setSearch(searchVal);
-
-    const matchedResults = dataList.filter((result) =>
-      result.name.toLowerCase().includes(searchVal.toLowerCase())
-    );
-    setSearchList(matchedResults);
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    navigate("/results");
   };
 
   return (
     <>
-      <form className={`mt-20 mx-auto shadow-lg w-9/12 p-5`}>
+      <form
+        className={`mt-20 mx-auto shadow-lg w-9/12 p-5`}
+        onSubmit={(e) => handleSearchSubmit(e)}
+      >
         <input
           type="text"
           className={`w-11/12 focus:outline-none`}

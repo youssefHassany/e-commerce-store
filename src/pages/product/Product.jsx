@@ -4,14 +4,14 @@ import { FetchedDataContext } from "../../App";
 
 const Product = () => {
   const { id } = useParams();
-  const AllproductsData = useContext(FetchedDataContext);
+  const { productsData } = useContext(FetchedDataContext);
 
   const [currentProductData, setCurrentProductData] = useState(null);
 
   useEffect(() => {
-    const filteredProduct = AllproductsData.find((product) => product.id == id);
+    const filteredProduct = productsData.find((product) => product.id == id);
     setCurrentProductData(filteredProduct);
-  }, [AllproductsData, id]);
+  }, [productsData, id]);
 
   if (!currentProductData) {
     return <div className="mt-20">Loading...</div>;
