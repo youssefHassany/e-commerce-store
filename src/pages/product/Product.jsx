@@ -18,19 +18,19 @@ const Product = () => {
   }
 
   return (
-    <div className="mt-14 w-11/12 sm:w-3/5 mx-auto bg-gray-200 shadow-lg p-4 flex flex-col lg:flex-row justify-between items-center gap-4 rounded min-h-screen">
+    <div className="mt-14 w-11/12 mx-auto bg-gray-200 shadow-lg p-4 flex flex-col lg:flex-row justify-between items-center gap-10 rounded min-h-screen">
       <>
         <img
-          src={currentProductData.imgSrc}
+          src={currentProductData.image}
           className=" w-80"
-          alt={currentProductData.name}
+          alt={currentProductData.title}
         />
       </>
 
-      <ul className="md:text-xl font-medium">
-        <li className="mb-3">Name: {currentProductData.name}</li>
+      <ul className="font-medium">
+        <li className="mb-3">Name: {currentProductData.title}</li>
         <li className="mb-3">Price: {currentProductData.price} $</li>
-        <li className="mb-3">About: {currentProductData.about}</li>
+        <li className="mb-3">About: {currentProductData.description}</li>
       </ul>
     </div>
   );

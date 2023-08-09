@@ -54,10 +54,10 @@ const Search = () => {
             <li
               key={idx * 10}
               className="p-2 border-b border-gray-300 hover:bg-gray-300 cursor-pointer flex justify-between"
-              onClick={() => setSearch(item.name)}
+              onClick={() => setSearch(item.title)}
             >
-              <p>{item.name}</p>
-              <img src={item.imgSrc} className="w-8" />
+              <p>{item.title}</p>
+              <img src={item.image} className="w-8" />
             </li>
           ))}
         </ul>

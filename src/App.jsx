@@ -11,7 +11,7 @@ import { useState, useEffect, createContext } from "react";
 export const FetchedDataContext = createContext(null);
 
 function App() {
-  const API_URL = "http://localhost:3500/products";
+  const API_URL = "https://fakestoreapi.com/products";
 
   const [productsData, setProductsData] = useState([]);
 
@@ -20,7 +20,7 @@ function App() {
       const res = await fetch(url);
       const data = await res.json();
       setProductsData(data);
-      // console.log(data);
+      console.log(data);
     } catch (err) {
       console.log(err);
     }
@@ -39,7 +39,7 @@ function App() {
     setSearch(searchVal);
 
     const matchedResults = productsData.filter((result) =>
-      result.name.toLowerCase().includes(searchVal.toLowerCase())
+      result.title.toLowerCase().includes(searchVal.toLowerCase())
     );
     setSearchList(matchedResults);
   };
