@@ -50,7 +50,16 @@ function App() {
 
       {productsData.length > 0 ? (
         <FetchedDataContext.Provider
-          value={{ productsData, search, setSearch, searchList, handleSearch }}
+          value={{
+            productsData,
+            setProductsData,
+            search,
+            setSearch,
+            searchList,
+            handleSearch,
+            fetchData,
+            API_URL,
+          }}
         >
           {/* Your Routes */}
           <Routes>

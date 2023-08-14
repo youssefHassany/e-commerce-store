@@ -16,6 +16,6 @@ a react e-commerce website that allows users to see and search for the products 
 <ul>
     <li>React JS</li>
     <li>tailwindcss</li>
-    <li>json-server</li>
     <li>react router</li>
+    <li>framer motion</li>
 </ul>

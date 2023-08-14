@@ -11,7 +11,7 @@ const Products = () => {
         <Link
           to={`/product/${item.id}`}
           key={index}
-          className="bg-gray-100 shadow-lg flex flex-col items-center justify-between rounded p-2"
+          className="bg-gray-100 shadow-lg flex flex-col items-center justify-between rounded p-2 hover:shadow-xl hover:bg-gray-300 duration-200"
         >
           <img src={item.image} className="w-44 " />
           <p className="text-lg text-center">{item.title}</p>
