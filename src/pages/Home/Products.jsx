@@ -11,17 +11,11 @@ const Products = () => {
         <Link
           to={`/product/${item.id}`}
           key={index}
-          className="bg-gray-100 shadow-lg flex flex-col items-center justify-between rounded p-2 hover:shadow-xl hover:bg-gray-300 duration-200"
+          className="bg-gray-100 shadow-lg flex flex-col items-center justify-between rounded p-2 hover:shadow-xl hover:bg-gray-300 duration-200 h-96"
         >
-          <img src={item.image} className="w-44 " />
+          <img src={item.image} className="w-32 " />
           <p className="text-lg text-center">{item.title}</p>
           <h2 className="font-bold ">{item.price} $</h2>
-          <button
-            className="px-3 py-1 rounded my-2 border-2 border-red-700 text-red-700 font-medium relative hover:text-white z-10
-                       before:absolute before:bg-red-700 before:top-0 before:left-0 before:w-0 before:h-full before:duration-300 before:z-[-1] before:hover:w-full"
-          >
-            Add To Cart
-          </button>
         </Link>
       ))}
     </div>
