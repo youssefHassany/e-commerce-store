@@ -1,21 +1,12 @@
-# react e-commerce website
+# E-Commerce Website using NextJS
 
-a react e-commerce website that allows users to see and search for the products they want to purchase
+This is a mock clothes store website built with NextJS
 
-## fetures
-
-<ul>
-    <li>responsive design</li>
-    <li>searching products</li>
-    <li>add to cart option</li>
-    <li>easy to use</li>
-</ul>
-
-## tools
+## key components
 
 <ul>
-    <li>React JS</li>
-    <li>tailwindcss</li>
-    <li>react toastify</li>
-    <li>framer motion</li>
+    <li>Framework: NextJS</li>
+    <li>Styling: Tailwindcss</li>
+    <li>UI Components: ShadCN</li>
+    <li>Data: fakestoreAPI</li>
 </ul>
