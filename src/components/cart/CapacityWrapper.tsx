@@ -30,7 +30,7 @@ const CapacityWrapper = (props: CartItemType) => {
         </Button>
       </div>
 
-      <h3 className="text-center">{price * capacity} $</h3>
+      <div className="text-center">{price * capacity} $</div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import Hero from "@/components/hero/Hero";
-import { Product } from "@/types/product";
+import type { Product } from "@/types/product";
 
 export default async function Product({ params }: { params: { id: number } }) {
   const res = await fetch(`https://fakestoreapi.com/products/${params.id}`);

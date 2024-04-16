@@ -11,7 +11,7 @@ const CartItem = (props: CartItemType) => {
       <RemoveItemFromCart {...props} />
 
       <div>
-        <h3 className="text-lg p-2">{title}</h3>
+        <div className="text-lg p-2">{title}</div>
         <CapacityWrapper {...props} />
       </div>
 
