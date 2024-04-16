@@ -10,9 +10,11 @@ export default function SearchList({ params }: { params: { title: string } }) {
   useEffect(() => {
     const filterProducts = async () => {
       try {
+        // get all products
         const response = await fetch(`https://fakestoreapi.com/products`);
         const products: Product[] = await response.json();
 
+        // filter products that has the search value
         const filteredProducts = products.filter((product) =>
           product.title.toLowerCase().includes(params.title.toLowerCase())
         );
@@ -39,6 +41,7 @@ export default function SearchList({ params }: { params: { title: string } }) {
             index={idx}
             price={product.price}
             title={product.title}
+            key={product.id}
           />
         ))}
       </div>
