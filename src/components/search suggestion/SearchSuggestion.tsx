@@ -15,7 +15,7 @@ const SearchSuggestion = ({ searchVal }: Props) => {
       const response = await fetch(`https://fakestoreapi.com/products`);
       const products: Product[] = await response.json();
       const searchItems = products.filter((item) =>
-        item.title.includes(searchVal)
+        item.title.toLocaleLowerCase().includes(searchVal.toLocaleLowerCase())
       );
       setSearchResults(searchItems);
     };
