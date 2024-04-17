@@ -41,7 +41,7 @@ const ProductCard = ({ title, image, price, id, category, index }: Props) => {
           </CardContent>
           <CardFooter className="flex flex-col-reverse gap-1 md:flex-row justify-between items-center w-full">
             <CardDescription>{price} $</CardDescription>
-            <Badge>{category}</Badge>
+            <Badge className="text-center">{category}</Badge>
           </CardFooter>
         </Card>
       </Link>

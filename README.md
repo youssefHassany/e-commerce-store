@@ -1,6 +1,6 @@
 # E-Commerce Website using NextJS
 
-This is a mock clothes store website built with NextJS
+This is a mock clothes store website built with NextJS <a href="https://clothes-store.netlify.app/" target="_blank">Link</a>
 
 ## key components
 
