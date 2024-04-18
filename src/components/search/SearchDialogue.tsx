@@ -11,12 +11,14 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
 export function SearchDialogue() {
   const router = useRouter();
   const [searchVal, setSearchVal] = useState("");
+  const dialogTriggerRef = useRef<any>(null);
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -33,6 +35,11 @@ export function SearchDialogue() {
             e.preventDefault();
             router.push(`/search/${searchVal}`);
             setSearchVal("");
+
+            // Programmatically trigger a click event on the dialogTriggerRef
+            if (dialogTriggerRef.current) {
+              dialogTriggerRef.current.click();
+            }
           }}
           className="grid gap-4 py-4"
         >
@@ -43,13 +50,21 @@ export function SearchDialogue() {
               required
               value={searchVal}
               onChange={(e) => setSearchVal(e.target.value)}
-              className="col-span-3 bg-transparent"
+              className="col-span-4 bg-transparent w-full"
             />
           </div>
         </form>
         <DialogFooter>
           <Button type="submit">Search</Button>
         </DialogFooter>
+        <DialogTrigger>
+          <Button
+            className="bg-secondary hover:bg-secondary-foreground text-secondary-foreground hover:text-secondary w-full"
+            ref={dialogTriggerRef}
+          >
+            Close
+          </Button>
+        </DialogTrigger>
       </DialogContent>
     </Dialog>
   );

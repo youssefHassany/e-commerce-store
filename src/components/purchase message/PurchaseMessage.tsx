@@ -46,7 +46,8 @@ const PurchaseMessage = () => {
         <DialogHeader>
           <DialogTitle>Purchase Details</DialogTitle>
           <DialogDescription>
-            Please Enter Required Data To Resume The Purchase Operation.
+            This is just view, nothing will be purchased i'm just practicing
+            here.
           </DialogDescription>
         </DialogHeader>
         <form className="grid gap-4 py-4" onSubmit={handleSubmit}>
