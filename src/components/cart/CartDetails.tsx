@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button } from "../ui/button";
 import { clearCart } from "@/state/cart/cartSlice";
 import { toast } from "sonner";
+import PurchaseMessage from "../purchase message/PurchaseMessage";
 
 const CartDetails = () => {
   const dispatch = useDispatch();
@@ -34,7 +35,8 @@ const CartDetails = () => {
     <div className="sticky bottom-0 left-0 w-full bg-zinc-900 bg-opacity-90 p-3 rounded">
       <p className="text-center p-2">Total Price: {totalPrice}</p>
       <div className="flex justify-evenly">
-        <Button>Purchase</Button>
+        {/* <Button>Purchase</Button> */}
+        <PurchaseMessage />
         <Button
           onClick={() => {
             dispatch(clearCart());
