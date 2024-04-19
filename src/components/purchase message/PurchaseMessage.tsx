@@ -46,8 +46,8 @@ const PurchaseMessage = () => {
         <DialogHeader>
           <DialogTitle>Purchase Details</DialogTitle>
           <DialogDescription>
-            This is just view, nothing will be purchased i'm just practicing
-            here.
+            This is just view, nothing will be purchased i&apos;m just
+            practicing here.
           </DialogDescription>
         </DialogHeader>
         <form className="grid gap-4 py-4" onSubmit={handleSubmit}>

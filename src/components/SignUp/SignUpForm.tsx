@@ -32,8 +32,8 @@ const SignUpForm = () => {
             <CardHeader>
               <CardTitle>Customer Sign In</CardTitle>
               <CardDescription>
-                Just Press Sign In There's No Users anyway it's just for view &
-                practice.
+                Just Press Sign In There&apos;s No Users anyway it&apos;s just
+                for view & practice.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-2">
@@ -64,8 +64,8 @@ const SignUpForm = () => {
             <CardHeader>
               <CardTitle>Admin Sign In</CardTitle>
               <CardDescription>
-                Just Press Sign In There's No Users anyway it's just for view &
-                practice.
+                Just Press Sign In There&apos;s No Users anyway it&apos;s just
+                for view & practice.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-2">
