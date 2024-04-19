@@ -1,14 +1,25 @@
+"use client";
+
 import { Product } from "@/types/product";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProductCard from "../product card/ProductCard";
 
 interface Props {
   param: string;
 }
 
-const ProductsList = async ({ param }: Props) => {
-  const response = await fetch(`https://fakestoreapi.com/products${param}`);
-  const products: Product[] = await response.json();
+const ProductsList = ({ param }: Props) => {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const response = await fetch(`https://fakestoreapi.com/products${param}`);
+      const data: Product[] = await response.json();
+      setProducts(data);
+    };
+
+    fetchProducts();
+  }, [products]);
 
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4">
