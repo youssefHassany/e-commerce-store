@@ -21,7 +21,7 @@ const CustomerInOrder = ({ id }: { id: number }) => {
   }
 
   return (
-    <div>
+    <div className="font-medium">
       <div>
         Cutomer Name: {user.name.firstname} {user.name.lastname}
       </div>
