@@ -3,6 +3,7 @@
 import { useSelector } from "react-redux";
 import { RootState } from "@/state/store";
 import CustomerNav from "./CustomerNav";
+import AdminNav from "./AdminNav";
 
 const Nav = () => {
   const auth = useSelector((state: RootState) => state.auth.value);
@@ -12,7 +13,7 @@ const Nav = () => {
   }
 
   if (auth === "admin") {
-    return <></>;
+    return <AdminNav />;
   }
 
   return <CustomerNav />;

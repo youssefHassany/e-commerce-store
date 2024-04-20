@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import Title from "../title/Title";
 import SignUpForm from "../SignUp/SignUpForm";
 import ProductsList from "../products list/ProductsList";
+import AdminCart from "../cart/admin/AdminCart";
 
 const UserAuthWrapper = () => {
   const auth = useSelector((state: RootState) => state.auth.value);
@@ -20,7 +21,14 @@ const UserAuthWrapper = () => {
   }
 
   if (auth === "admin") {
-    return <>Admin Page</>;
+    return (
+      <main className="w-screen mx-auto flex min-h-screen flex-col items-center justify-between py-24 px-2 md:px-8 bg-zinc-900 text-secondary">
+        {/* <Title title="Dashboard" /> */}
+        <section className="w-screen grid grid-cols-1 lg:grid-cols-2 gap-3 p-3">
+          <AdminCart />
+        </section>
+      </main>
+    );
   }
 
   // if the user is customer
