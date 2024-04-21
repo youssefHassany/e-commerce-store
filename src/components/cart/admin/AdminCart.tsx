@@ -1,17 +1,11 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
 import AdminCartItemsList from "./AdminCartItemsList";
-import Title from "@/components/title/Title";
+import DivWrapper from "@/components/div wrapper/DivWrapper";
 
 const AdminCart = () => {
   return (
-    <div className="h-[350px] overflow-y-scroll p-4 bg-zinc-800 rounded-lg">
-      <div className="text-center">
-        <Title title="Carts" />
-      </div>
+    <DivWrapper>
       <AdminCartItemsList />
-    </div>
+    </DivWrapper>
   );
 };
 

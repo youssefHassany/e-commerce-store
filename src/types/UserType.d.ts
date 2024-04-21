@@ -7,4 +7,15 @@ export interface UserType {
     firstname: string;
     lastname: string;
   };
+  address: {
+    city: string;
+    street: string;
+    number: number;
+    zipcode: string;
+    geolocation: {
+      lat: string;
+      long: string;
+    };
+  };
+  phone: string;
 }

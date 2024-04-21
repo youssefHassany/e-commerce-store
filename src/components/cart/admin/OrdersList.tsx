@@ -26,7 +26,7 @@ const OrdersList = (product: ProductInCartType) => {
       {!productDetails ? (
         "Loading..."
       ) : (
-        <div className="w-full flex items-center justify-between">
+        <div className="w-full flex items-center justify-between gap-2">
           <p>
             {product.quantity}x {productDetails?.title}
           </p>
