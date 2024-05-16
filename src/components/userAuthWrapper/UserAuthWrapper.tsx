@@ -8,6 +8,7 @@ import SignUpForm from "../SignUp/SignUpForm";
 import ProductsList from "../products list/ProductsList";
 import AdminCart from "../cart/admin/AdminCart";
 import UsersListWrapper from "../users list/UsersListWrapper";
+import BarChart from "../barchart card/BarChart";
 
 const UserAuthWrapper = () => {
   const auth = useSelector((state: RootState) => state.auth.value);
@@ -28,6 +29,9 @@ const UserAuthWrapper = () => {
         <section className="w-screen grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-3 p-3">
           <AdminCart />
           <UsersListWrapper />
+          <div className="lg:col-span-2">
+            <BarChart />
+          </div>
         </section>
       </main>
     );
