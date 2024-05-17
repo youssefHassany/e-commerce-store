@@ -6,7 +6,7 @@ export interface ProductWithQuantity {
   quantity: number;
 }
 
-export async function useGetProductQuantityInCart(): Promise<
+export async function getProductQuantityInCart(): Promise<
   ProductWithQuantity[]
 > {
   try {
