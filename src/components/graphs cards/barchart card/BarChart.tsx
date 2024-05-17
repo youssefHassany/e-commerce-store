@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import DivWrapper from "../div wrapper/DivWrapper";
-import BarChartComponent from "../graphs/BarChart";
+import DivWrapper from "../../div wrapper/DivWrapper";
+import BarChartComponent from "../../graphs/BarChart";
 import {
   getProductQuantityInCart,
   ProductWithQuantity,
 } from "@/hooks/getProductQuantityInCart";
-import Loader from "../common/Loader";
+import Loader from "../../common/Loader";
 
 const BarChart = () => {
   const [barChartData, setBarChartData] = useState<ProductWithQuantity[]>([]);

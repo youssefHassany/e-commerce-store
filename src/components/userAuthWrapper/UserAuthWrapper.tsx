@@ -8,7 +8,8 @@ import SignUpForm from "../SignUp/SignUpForm";
 import ProductsList from "../products list/ProductsList";
 import AdminCart from "../cart/admin/AdminCart";
 import UsersListWrapper from "../users list/UsersListWrapper";
-import BarChart from "../barchart card/BarChart";
+import BarChart from "../graphs cards/barchart card/BarChart";
+import PieChartCard from "../graphs cards/PieChartCard";
 
 const UserAuthWrapper = () => {
   const auth = useSelector((state: RootState) => state.auth.value);
@@ -25,13 +26,17 @@ const UserAuthWrapper = () => {
   if (auth === "admin") {
     return (
       <main className="w-screen mx-auto flex min-h-screen flex-col items-center justify-between py-24 px-2 md:px-8 bg-zinc-900 text-secondary">
-        {/* <Title title="Dashboard" /> */}
+        <div className="mb-10">
+          <Title title="Dashboard" />
+        </div>
+
         <section className="w-screen grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-3 p-3">
           <AdminCart />
           <UsersListWrapper />
           <div className="lg:col-span-2">
             <BarChart />
           </div>
+          <PieChartCard />
         </section>
       </main>
     );
