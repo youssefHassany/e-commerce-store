@@ -3,7 +3,7 @@ import React from "react";
 
 interface GraphProps<K extends keyof Product> {
   data: Product[];
-  dataTarget: K;
+  dataTarget: K | string;
   barColor?: string;
   barBorderRadius?: string;
   toolTip?: boolean;
