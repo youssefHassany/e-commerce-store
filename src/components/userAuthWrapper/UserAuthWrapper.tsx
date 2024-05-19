@@ -10,6 +10,7 @@ import AdminCart from "../cart/admin/AdminCart";
 import UsersListWrapper from "../users list/UsersListWrapper";
 import BarChart from "../graphs cards/barchart card/BarChart";
 import PieChartCard from "../graphs cards/PieChartCard";
+import HorizontalBarChartCard from "../graphs cards/HorizontalBarChartCard";
 
 const UserAuthWrapper = () => {
   const auth = useSelector((state: RootState) => state.auth.value);
@@ -30,9 +31,10 @@ const UserAuthWrapper = () => {
           <Title title="Dashboard" />
         </div>
 
-        <section className="w-screen grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-3 p-3">
+        <section className="w-screen grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-3 p-3 px-6 md:px-12">
           <AdminCart />
           <UsersListWrapper />
+          <HorizontalBarChartCard />
           <div className="lg:col-span-2">
             <BarChart />
           </div>

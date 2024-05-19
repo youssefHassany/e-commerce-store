@@ -7,7 +7,7 @@ import {
   getProductQuantityInCart,
   ProductWithQuantity,
 } from "@/hooks/getProductQuantityInCart";
-import Loader from "../../common/Loader";
+import Loading from "@/app/loading";
 
 const BarChart = () => {
   const [barChartData, setBarChartData] = useState<ProductWithQuantity[]>([]);
@@ -32,7 +32,9 @@ const BarChart = () => {
   if (loading) {
     return (
       <DivWrapper>
-        <Loader />
+        <div className="h-full flex flex-col justify-center items-center">
+          <Loading />
+        </div>
       </DivWrapper>
     );
   }

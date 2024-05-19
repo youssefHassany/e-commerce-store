@@ -3,24 +3,24 @@
 import React, { useEffect, useState } from "react";
 import DivWrapper from "../div wrapper/DivWrapper";
 import { Product } from "@/types/product";
-import PieChartGraph from "../graphs/PieChartGraph";
-import { getTopExpensiveProducts } from "@/hooks/getTopExpensiveProducts";
+import { getTopFiveProducts } from "@/hooks/getTopFiveProducts";
+import HorizontalBarChart from "../graphs/HorizontalBarChart";
 import Loading from "@/app/loading";
 
-const PieChartCard = () => {
-  const [topFiveExpensiveProducts, setTopFiveExpensiveProducts] = useState<
+const HorizontalBarChartCard = () => {
+  const [topFiveProducts, setTopFiveProducts] = useState<
     Product[] | undefined
   >();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchTopFiveExpensiveProducts = async () => {
+    const fetchTopFiveProducts = async () => {
       try {
         const res = await fetch("https://fakestoreapi.com/products");
         const allProducts = await res.json();
-        const topFive = getTopExpensiveProducts(allProducts, 5);
-        setTopFiveExpensiveProducts(topFive);
+        const topFive = getTopFiveProducts(allProducts, 10);
+        setTopFiveProducts(topFive);
       } catch (error) {
         setError("Error fetching data");
       } finally {
@@ -28,7 +28,7 @@ const PieChartCard = () => {
       }
     };
 
-    fetchTopFiveExpensiveProducts();
+    fetchTopFiveProducts();
   }, []);
 
   if (loading) {
@@ -46,12 +46,17 @@ const PieChartCard = () => {
   }
   return (
     <DivWrapper>
-      <p className="text-center font-medium">Top 5 Expensive Products</p>
-      {topFiveExpensiveProducts && (
-        <PieChartGraph data={topFiveExpensiveProducts} />
+      <p className="text-center font-medium">Top 10 Rated Products</p>
+      {topFiveProducts && (
+        <HorizontalBarChart
+          data={topFiveProducts}
+          dataTarget="rating.rate"
+          toolTip
+          tooltipTarget="title"
+        />
       )}
     </DivWrapper>
   );
 };
 
-export default PieChartCard;
+export default HorizontalBarChartCard;
