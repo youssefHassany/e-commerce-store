@@ -6,6 +6,7 @@ This is a mock clothes store website built with NextJS <a href="https://clothes-
 
 <ul>
     <li>Framework: NextJS</li>
+    <li>Language: Typescript</li>
     <li>Styling: Tailwindcss</li>
     <li>UI Components: ShadCN</li>
     <li>Data: fakestoreAPI</li>
